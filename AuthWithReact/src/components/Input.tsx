@@ -13,7 +13,7 @@ type InputType={
 
 
 const Input =forwardRef<HTMLInputElement,InputType>(({input,placeholder,icon:Icon,children,register,pw} :InputType ,ref) => {
-  const [showValue,setShowValue]=useState(!pw)
+  const [showValue,setShowValue]=useState(pw)
   
   return (
     <label className="input input-bordered flex items-center gap-2">
