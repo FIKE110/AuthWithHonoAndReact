@@ -9,6 +9,7 @@ import { authorizationUrlGithub,authorizationUrlGoogle, registerUrl } from "../m
 import axios from "axios"
 import { useMutation} from "@tanstack/react-query"
 import ThemeToggle from "../components/ThemeToggle"
+import SignInPrompt from "../components/SignUp"
 
 
 export type RegisterRequest={
@@ -122,7 +123,7 @@ function SignupScreen (){
                 ><FaGithub size={18}
                 /> Continue with Github</Button>
             </div>
-            
+            <SignInPrompt firstLine="Have an account?" signInPath='/auth/login' text='login'/>
         </div>
     </div>
   )

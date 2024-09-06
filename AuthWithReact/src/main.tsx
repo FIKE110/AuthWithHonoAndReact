@@ -7,9 +7,15 @@ import LoginScreen from './screens/LoginScreen'
 import GoogleOAuthToken from './screens/GoogleOAuthToken'
 import { QueryClientProvider,QueryClient } from '@tanstack/react-query'
 import ProfileScreen from './screens/ProfileScreen'
+import NotFound from './screens/404Page'
+import OAuthAppDescription from './screens/HomeScreen'
 export const backendUrl=import.meta.env.VITE_BACKEND_URL
 
 const router=createBrowserRouter([
+  {
+    path:'/',
+    element:<OAuthAppDescription />
+  },
   {
     path:'/account',
     children:[{
@@ -32,6 +38,9 @@ const router=createBrowserRouter([
         element:<GoogleOAuthToken />
       }
     ]
+  },
+  {path:'*',
+    element:<NotFound />
   }
 ])
 
