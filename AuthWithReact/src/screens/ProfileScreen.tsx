@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import axios, { isAxiosError } from "axios"
 import ThemeToggle from "../components/ThemeToggle"
 import { useState } from "react"
+import { profileUrl } from "../main"
 
 
 type ProfileDataType={
@@ -12,7 +13,7 @@ type ProfileDataType={
 }
 const fetchUserProfile=async ()=>{
     try{
-    const res=await axios.get('http://localhost:3001/account/profile',{
+    const res=await axios.get(profileUrl ,{
         headers:{
             'Authorization':`Bearer ${localStorage.getItem('jwt-token')}`
         }
@@ -33,7 +34,7 @@ const fetchUserProfile=async ()=>{
 
 function ProfileScreen () {
 
-    const {data,isPending,error}= useQuery<ProfileDataType>({
+    const {data,isPending,error,refetch}= useQuery<ProfileDataType>({
         queryKey:['profileKey'],
         queryFn:fetchUserProfile
     })
@@ -93,7 +94,7 @@ function ProfileScreen () {
               <h2 className="card-title text-lg font-semibold text-red-600">Error</h2>
               <p className="text-sm text-red-500">Failed to load user data. Please try again.</p>
               <div className="card-actions mt-4">
-                <button className="btn btn-outline btn-error">
+                <button className="btn btn-outline btn-error" onClick={()=>refetch()}>
                   Retry
                 </button>
               </div>

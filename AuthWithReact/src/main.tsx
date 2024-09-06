@@ -48,6 +48,7 @@ export const authorizationUrlGoogle=`${backendUrl}/auth/oauth/google`
 export const authorizationUrlGithub=`${backendUrl}/auth/oauth/github`
 export const registerUrl=`${backendUrl}/auth/register`
 export const loginUrl=`${backendUrl}/auth/login`
+export const profileUrl=`${backendUrl}/account/profile`
 const queryClient=new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
