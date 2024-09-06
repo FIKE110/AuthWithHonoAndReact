@@ -20,11 +20,7 @@ export type RegisterRequest={
 
 
 function SignupScreen (){
-  const {register,handleSubmit,formState:{errors}} =useForm<RegisterRequest>({defaultValues:{
-    username:"Fortune",
-    email:"chihurum@gmail.com",
-    password:'Fortune!.'
-  }})
+  const {register,handleSubmit,formState:{errors}} =useForm<RegisterRequest>()
 
   const [isGoogleOauthLoading,setIsGoogleOAuthLoading]=useState(false)
   const [isGithubOauthLoading,setIsGithubOauthLoading]=useState(false)
