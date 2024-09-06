@@ -1,6 +1,7 @@
 {
   "name": "AuthBackend",
   "scripts": {
+    "setup":"bun prisma migrate dev",
     "dev": "bun --watch run src/index.ts ",
     "start":"bun run ./src/index.ts"
   },
