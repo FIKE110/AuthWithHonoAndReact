@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "webapp:dev": "cd AuthWithReact && bun run dev",
-    "webapp:build": "cd AuthWithReact && bun run start",
+    "webapp:build": "cd AuthWithReact && bun run build",
     "backend:dev": "cd AuthBackend && bun run dev",
     "backend:start": "cd AuthBackend && bun run start"
   },
