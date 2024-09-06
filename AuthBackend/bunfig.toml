@@ -1,0 +1,2 @@
+entry = "src/index.ts"  # Entry point of your TypeScript application
+outDir = "dist"         # Output directory for compiled JavaScript

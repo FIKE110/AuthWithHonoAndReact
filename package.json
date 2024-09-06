@@ -1,0 +1,14 @@
+{
+  "name": "authwithreactandhono",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "webapp:dev": "cd AuthWithReact && bun run dev",
+    "webapp:build": "cd AuthWithReact && bun run start",
+    "backend:dev": "cd AuthBackend && bun run dev",
+    "backend:start": "cd AuthBackend && bun run start"
+  },
+  "dependencies": {
+    "authwithreactandhono": "file:"
+  }
+}
